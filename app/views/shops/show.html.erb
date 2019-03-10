@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elen - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/animate.css">
+    
+    <link rel="stylesheet" href="/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/magnific-popup.css">
+
+    <link rel="stylesheet" href="/assets/aos.css">
+
+    <link rel="stylesheet" href="/assets/ionicons.min.css">
+
+    <link rel="stylesheet" href="/assets/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/assets/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="/assets/flaticon.css">
+    <link rel="stylesheet" href="/assets/icomoon.css">
+    <link rel="stylesheet" href="/assets/styleo.css">
+  </head>
+  <div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="/">NearClick</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-menu"></span>
+              </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/fashion">Fashion</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/electronics">Electronics</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/furniture">Furniture</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/kitchen">Kitchen</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/grocery">Grocery</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/restraunts">Retraunts</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/events">Events</a>
+                                    </li>
+                                    
+                                   
+                                    <% if user_signed_in? %>
+                                    <div class="justspace" style="padding-right:10px;">
+                                    <li><%= link_to image_tag("/assets/user.png", width: 40, height: 40), destroy_user_session_path, method: :delete %></li>
+                                    <% else %>
+                                    <li><a href="/users/sign_in" class="btn btn-outline-light top-btn">SignUp/SignIn</a></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <body>
+
+
+
+    <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="text-align:center;"><%= @shop.name %>'s Contact Info</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         <h3><b>Location:</b></h3><br>
+         <p><%= @shop.location %></p>
+         <hr>
+
+         <h3><b>Phone:</b></h3><br>
+         <p><%= @shop.phone %></p>
+         <hr>
+
+         <h3><b>Website:</b></h3><br>
+         <p><%= @shop.web %></p>
+         <hr>
+
+         <h3><b>Email:</b></h3><br>
+         <p><%= @shop.email %></p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="colorlib-page">
+
+    <div id="colorlib-main">
+      <div class="hero-wrap js-fullheight" style="background-image: url(/assets/bg_1.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="js-fullheight d-flex justify-content-center align-items-center">
+          <div class="col-md-8 text text-center">
+            <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:150px; height:150px; border-radius: 50%;"></div>
+            <div class="desc">
+              <h2 class="subheading"><%= @shop.category %></h2>
+              <h1 class="mb-4"><%= @shop.name %></h1>
+              <p class="mb-4"><%= @shop.description %></p>
+              <p class="btn-custom" data-toggle="modal" data-target="#myModal">Contact Shop </p>
+              <% if current_user=(@shop.user) %>
+<%= link_to 'Edit', edit_shop_path(@shop), class: 'btn btn-danger' %>
+<% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Products</h2>
+            <p>All the products listed here are directly sold by <%= @shop.name %> and NearClick is just there delivery partner, we deliver the product as it is without opening the package.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="blog-entry ftco-animate">
+              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <div class="text text-2 pt-2 mt-3">
+                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
+                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
+                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <div class="author mb-4 d-flex align-items-center">
+                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
+                  <div class="ml-3 info">
+                    <span>Sold By</span>
+                    <h3><a href="#"><%= @shop.name %></a></h3>
+                  </div>
+                </div>
+                <div class="meta-wrap align-items-center">
+                  
+                  <div class="half">
+                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-block dark-bg" style="padding-bottom:30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright &copy; 2019  Nearclick. All rights reserved. </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+
+                        <ul>
+                         <li class="nav-item active">
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/contact">Contact</a>
+                                    </li>
+
+                                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div><!-- END COLORLIB-MAIN -->
+  </div><!-- END COLORLIB-PAGE -->
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="/assets/jquery.min.js"></script>
+  <script src="/assets/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/assets/popper.min.js"></script>
+  <script src="/assets/bootstrap.min.js"></script>
+  <script src="/assets/jquery.easing.1.3.js"></script>
+  <script src="/assets/jquery.waypoints.min.js"></script>
+  <script src="/assets/jquery.stellar.min.js"></script>
+  <script src="/assets/owl.carousel.min.js"></script>
+  <script src="/assets/jquery.magnific-popup.min.js"></script>
+  <script src="/assets/aos.js"></script>
+  <script src="/assets/jquery.animateNumber.min.js"></script>
+  <script src="/assets/bootstrap-datepicker.js"></script>
+  <script src="/assets/jquery.timepicker.min.js"></script>
+  <script src="/assets/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/assets/google-map.js"></script>
+  <script src="/assets/main.js"></script>
+    
+  </body>
+</html>

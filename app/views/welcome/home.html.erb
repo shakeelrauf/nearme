@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1200,  user-scalable=0">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Page Title -->
+    <title>Listing &amp; Directory Website Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="/assets/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="/assets/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="/assets/set1.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="/">NearClick</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-menu"></span>
+              </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/fashion">Fashion</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/electronics">Electronics</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/furniture">Furniture</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/kitchen">Kitchen</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/grocery">Grocery</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/restraunts">Retraunts</a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/welcome/events">Events</a>
+                                    </li>
+                                    
+                                   
+                                    <% if user_signed_in? %>
+                                    <div class="justspace" style="padding-right:10px;">
+                                    <li><%= link_to image_tag("/assets/user.png", width: 40, height: 40), destroy_user_session_path, method: :delete %></li>
+                                    <% else %>
+                                    <li><a href="/users/sign_in" class="btn btn-outline-light top-btn">SignUp/SignIn</a></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+<body>
+
+    <section class="slider d-flex align-items-center">
+        <!-- <img src="/assets/slider.jpg" class="img-fluid" alt="#"> -->
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="slider-title_box">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="slider-content_wrap">
+                                    <h1>Discover what's great Near You</h1>
+                                    <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-10">
+                                <form class="form-wrap mt-4">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <input type="text" placeholder="What are your looking for?" class="btn-group1">
+                                        <input type="text" placeholder="District Or Area" class="btn-group2">
+                                        
+                                        <a href="/welcome/search" class="btn-form">SEARCH<i class="pe-7s-angle-right"></i></a>
+                                    </div>
+                                </form>
+                                <div class="slider-link">
+                                    <a href="/welcome/popular">Browse Popular</a><span>or</span> <a href="/welcome/recent">Recently Addred</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--// SLIDER -->
+    <!--//END HEADER -->
+    <!--============================= FIND PLACES =============================-->
+    <section class="main-block">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3>What do you need to find?</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/welcome/events">
+                    <div class="find-place-img_wrap">
+                        <div class="grid">
+                            <figure class="effect-ruby">
+                                <img src="/assets/find-place1.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                <figcaption>
+                                    <h5 style="font-size:30px; font-weight:700;">Entertainment Party Wedding </h5>
+                                    
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <a href="/welcome/rest">
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/find-place2.jpg" class="img-fluid" alt="img13" />
+                                        
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Food Hotel Travel</h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="/welcome/grocery">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/find-place3.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Grocery & Veg </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <a href="/welcome/health">
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/babycare.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Health Babycare & Beauty </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="/welcome/gs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/education.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Education & Trg </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                            <div class="row">
+                <div class="col-md-4">
+                    <a href="/welcome/electronics">
+                    <div class="find-place-img_wrap">
+                        <div class="grid">
+                            <figure class="effect-ruby">
+                                <img src="/assets/find-place7.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                <figcaption>
+                                    <h5 style="font-size:30px; font-weight:700;">Mob Comp & Electronics </h5>
+                                    
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <a href="/welcome/fashion">
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/find-place6.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Fashion World</h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <a href="/welcome/repair">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/repair.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Home Service & Repair </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <a href="/welcome/hotels">
+                <div class="col-md-4">
+                    <div class="row find-img-align">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/favstore.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Fav Stores NearU </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="/welcome/decor">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="find-place-img_wrap">
+                                <div class="grid">
+                                    <figure class="effect-ruby">
+                                        <img src="/assets/find-place5.jpg" class="img-fluid" alt="img13" style="
+  opacity:0.5;
+  background-color:#000" />
+                                        <figcaption>
+                                            <h5 style="font-size:30px; font-weight:700;">Furniture Kitchen Stores Home Decor </h5>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<section class="main-block">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3>Click to sell or exchange your products</h3>
+                        <% if current_user&.shop %>
+  <%= link_to 'Manage Shop', current_user.shop, class: "btn btn-danger" %>
+<% else %>
+                        <a href="/shops/new" class="btn btn-danger">Add Shop</a>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="main-block dark-bg" style="padding-bottom:30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright &copy; 2019  Nearclick. All rights reserved. </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+
+                        <ul>
+                         <li class="nav-item active">
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/about">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/contact">Contact</a>
+                                    </li>
+
+                                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/jquery-3.2.1.min.js"></script>
+    <script src="/assets/popper.min.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+
+    <script>
+        $(window).scroll(function() {
+            // 100 = The point you would like to fade the nav in.
+
+            if ($(window).scrollTop() > 100) {
+
+                $('.fixed').addClass('is-sticky');
+
+            } else {
+
+                $('.fixed').removeClass('is-sticky');
+
+            };
+        });
+    </script>
+</body>
+
+</html>
