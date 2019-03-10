@@ -55,10 +55,8 @@
                                     </li>
                                     
                                    
-                                    <% if user_signed_in? && current_user.business? %>
-                                    <li><a href="/posts/new" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
-                                    <% elsif user_signed_in? && current_user.customer? %>
-                                    <li><%= link_to " My Profile", current_user, class: "btn btn-outline-light top-btn ti-user" %></li>
+                                    <% if user_signed_in? %>
+                                    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light top-btn" %></li>
                                     <% else %>
                                     <li><a href="/users/sign_in" class="btn btn-outline-light top-btn">SignUp/SignIn</a></li>
                                     <% end %>

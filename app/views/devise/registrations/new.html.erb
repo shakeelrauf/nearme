@@ -1,29 +1,100 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font//assets/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7//assets/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/assets/maint.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Sign-Up Now</h2>
+                    <form method="POST">
+                        <div class="input-group">
+                            <%= f.text_field :username, autofocus: true, placeholder: "Your Full Name" %>
+                        </div>
+                        <div class="input-group">
+                            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Your Email" %>
+                        </div>
+                        <div class="input-group">
+                            <%= f.text_field :location, autofocus: true, placeholder: "Your Full Address" %>
+                        </div>
+                        <div class="input-group">
+                            <%= f.text_field :pincode, autofocus: true, placeholder: "Your Pincode *Mandatory" %>
+                        </div>
+                        <div class="input-group">
+                            <%= f.text_field :phone, placeholder: "10 Digit Mobile Number" %>
+                        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
+                        <div class="row row-space">
+                            
+                                <div class="input-group">
+                                    
+                                    <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Your Password" %>
+                                </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                                <div class="input-group">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+                                </div>        
+                        </div>
+                        
 
+
+  
+
+
+                        <div class="p-t-30">
+
+
+    <%= f.submit "Sign Up", class: 'btn btn--radius btn--green' %>
+  
 <%= render "devise/shared/links" %>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Jquery JS-->
+
+    <!-- Main JS-->
+    <script src="/assets/global.js"></script>
+     <% end %>
+    
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Elen - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -68,8 +67,7 @@
                                     
                                    
                                     <% if user_signed_in? %>
-                                    <div class="justspace" style="padding-right:10px;">
-                                    <li><%= link_to image_tag("/assets/user.png", width: 40, height: 40), destroy_user_session_path, method: :delete %></li>
+                                    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light top-btn" %></li>
                                     <% else %>
                                     <li><a href="/users/sign_in" class="btn btn-outline-light top-btn">SignUp/SignIn</a></li>
                                     <% end %>
