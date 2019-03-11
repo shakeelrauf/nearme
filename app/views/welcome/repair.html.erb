@@ -15,15 +15,52 @@
 
 
 </head>
+<style>
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 <div class="dark-bg sticky-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="/">NearClick</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-menu"></span>
-              </button>
+                            <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; </span>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
@@ -68,6 +105,25 @@
             </div>
         </div>
 <body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a class="navbar-brand" style="text-align:center;" href="/">NearClick</a>
+  <br>
+  <% if user_signed_in? %>
+  <p style="text-align:center;">Welcome <%= current_user.username %></p>
+  <% else %>
+  <p style="text-align:center;">Welcome Guest</p>
+  <% end %>
+  <% if current_user&.shop %>
+  <a href="#">Add Product</a>
+  <%= link_to 'Manage Shop', current_user.shop %>
+  <% else %>
+  <a href="#"><span>0</span> Your Cart</a>
+  <a href="#">Wishlist</a>
+  <% end %>
+  <a href="/welcome/about">About</a>
+  <a href="/welcome/contact">Contact</a>
+</div>
 
 <div class="center" style="text-align:center;">
   <h3>Home Service & Repair</h3>
@@ -127,10 +183,10 @@
 
                         <ul>
                          <li class="nav-item active">
-                                        <a class="nav-link" style="font-size:36px; color:#ffffff" href="/welcome/about">About</a>
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/about">About</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" style="font-size:36px; color:#ffffff" href="/welcome/contact">Contact</a>
+                                        <a class="nav-link" style="font-size:30px; font-weight:700; color:#ffffff" href="/welcome/contact">Contact</a>
                                     </li>
 
                                 </ul>
@@ -139,6 +195,17 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>

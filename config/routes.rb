@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :shops
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :products
   get 'welcome/home'
   root "welcome#home"
