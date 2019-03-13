@@ -107,9 +107,12 @@
                                     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light top-btn" %></li>
                                     <% else %>
                                     <li><a href="/users/sign_in" class="btn btn-outline-light top-btn">SignUp/SignIn</a></li>
-                                    <% end %>
+                                   <% end %>
                                 </ul>
                             </div>
+                            <li class="nav-item active">
+                                        <a class="nav-link" href="/"><img src="/assets/search.png" style="width:30px; height:30px; margin-bottom:8px;"></a>
+                                    </li>
                         </nav>
                     </div>
                 </div>
