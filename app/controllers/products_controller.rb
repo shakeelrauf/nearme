@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = current_user.products.build
+    @product = current_user.shop.products.build
   end
 
   # GET /products/1/edit
@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = current_user.products.build(product_params)
+    @product = current_user.shop.products.build(product_params)
     @product.user = current_user
 
     respond_to do |format|

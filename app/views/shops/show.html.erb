@@ -129,7 +129,7 @@
   <p style="text-align:center;">Welcome Guest</p>
   <% end %>
   <% if current_user&.shop %>
-  <a href="#">Add Product</a>
+  <a href="/products/new">Add Product</a>
   <%= link_to 'Manage Shop', current_user.shop %>
   <% else %>
   <a href="#"><span>0</span> Your Cart</a>
@@ -207,13 +207,20 @@
           </div>
         </div>
         <div class="row">
+
+
+
+
+
+              <% @products.each do |product| %>
           <div class="col-md-4">
             <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
+              <a href="#" class="img img-2"><img src="<%= product.image %>" style="width:300px; height:250px;"> </a>
               <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
+                <span class="category mb-3 d-block"><a href="#"><%= product.name %></a></span>
+                <h3 class="mb-4"><a href="#"><%= product.category %></a></h3>
+                <h3 class="mb-4"><a href="#">Rs: <%= product.price %></a></h3>
+                <p class="mb-4"><%= product.description %></p>
                 <div class="author mb-4 d-flex align-items-center">
                   <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
                   <div class="ml-3 info">
@@ -224,150 +231,13 @@
                 <div class="meta-wrap align-items-center">
                   
                   <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
+                    <p><a href="#" class="btn btn-success">Order Now </a></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-         <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="blog-entry ftco-animate">
-              <a href="#" class="img img-2" style="background-image: url(/assets/8x1.jpg);"></a>
-              <div class="text text-2 pt-2 mt-3">
-                <span class="category mb-3 d-block"><a href="#">Honor 8X</a></span>
-                <h3 class="mb-4"><a href="#">Mobile Phone</a></h3>
-                <p class="mb-4">The brand new mobile phone from Honor comes with a SnapDragon 680 Chipset.</p>
-                <div class="author mb-4 d-flex align-items-center">
-                  <div class="img mb-4"><img src="<%= @shop.imageshop %>" style="width:50px; height:50px; border-radius: 50%;"></div>
-                  <div class="ml-3 info">
-                    <span>Sold By</span>
-                    <h3><a href="#"><%= @shop.name %></a></h3>
-                  </div>
-                </div>
-                <div class="meta-wrap align-items-center">
-                  
-                  <div class="half">
-                    <p><a href="#" class="btn py-2">Order Now <span class="ion-ios-arrow-forward"></span></a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </section>

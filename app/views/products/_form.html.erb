@@ -23,21 +23,20 @@
 <legend><span class="number">1</span> General Info</legend>
 <%= form.text_field :name, id: :product_name, placeholder: "Add name of your product or service here" %>
 <%= form.text_area :description, id: :product_description, placeholder: "Full Description" %>
-<label for="job" style="color:#fff;">Images:</label>
+<label for="job" style="color:#000;">Images:</label>
 <%= form.file_field :image, id: :product_image %>
 <%= form.file_field :imagetwo, id: :product_image %>
 <%= form.file_field :imagethree, id: :product_image %>   
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>
-<label for="job" style="color:#fff;">Categories:</label>
+<label for="job" style="color:#000;">Categories:</label>
     <%= form.select :category, ['Electronics', 'Fashion', 'Furniture', 'Kitchen Stores', 'Restraunts', 'Hotels', 'General Stores', 'Grocery Stores'] %>
 </fieldset>
 <fieldset>
 <legend><span class="number">3</span> Details</legend>
 <%= form.text_field :price, id: :product_price, placeholder: "Price of your product/service (optional for services)" %>
 
-<%= form.text_field :pincode, placeholder: "Pincode of your shop" %>
 
 </fieldset>
 <div class="actions">
@@ -47,7 +46,8 @@
 </div>
 <% end %>
 
-<style>
+
+
 <style type="text/css">
 .form-style-5{
   max-width: 500px;
@@ -88,7 +88,7 @@ font-size: 20px;
 .form-style-5 legend {
   font-size: 1.4em;
   margin-bottom: 10px;
-  color: #fff;
+  color: #000;
 }
 .form-style-5 label {
   display: block;
@@ -140,7 +140,7 @@ font-size: 20px;
 }
 .form-style-5 .number {
   background: #1abc9c;
-  color: #fff;
+  color: #000;
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -158,7 +158,7 @@ font-size: 20px;
   position: relative;
   display: block;
   padding: 19px 39px 18px 39px;
-  color: #FFF;
+  color: #000;
   margin: 0 auto;
   background: #1abc9c;
   font-size: 18px;
@@ -174,5 +174,4 @@ font-size: 20px;
 {
   background: #109177;
 }
-</style>
 </style>

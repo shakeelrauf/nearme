@@ -118,7 +118,7 @@
   <p style="text-align:center;">Welcome Guest</p>
   <% end %>
   <% if current_user&.shop %>
-  <a href="#">Add Product</a>
+  <a href="/products/new">Add Product</a>
   <%= link_to 'Manage Shop', current_user.shop %>
   <% else %>
   <a href="#"><span>0</span> Your Cart</a>
