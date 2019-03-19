@@ -2,6 +2,18 @@ Rails.application.routes.draw do
   resources :shops
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :products
+
+
+
+get '/cart', to: 'order_items#index'
+  resources :order_items, path: '/cart/items'
+  get '/cart/checkout', to: 'orders#new', as: :checkout
+  patch '/cart/checkout', to: 'orders#create'
+   get '/cart/tracking', to: 'orders#show', as: :tracking
+
+
+
+  
   get 'welcome/home'
   root "welcome#home"
   get 'welcome/rest'

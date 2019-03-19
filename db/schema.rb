@@ -12,6 +12,35 @@
 
 ActiveRecord::Schema.define(version: 20190313175908) do
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+    t.integer "quantity", null: false
+    t.decimal "price", precision: 15, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "mobile_number"
+    t.string "email"
+    t.string "city"
+    t.string "pincode"
+    t.string "delivery_address"
+    t.string "tracking"
+    t.decimal "sub_total", precision: 15, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_id"
+    t.string "token"
+    t.string "status", default: "cart"
+    t.index ["order_id"], name: "index_orders_on_order_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "price"
