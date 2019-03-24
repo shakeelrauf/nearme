@@ -40,6 +40,24 @@
   padding-top: 60px;
 }
 
+
+
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -81,7 +99,7 @@
                             <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776; </span>
                             <a class="navbar-brand" href="/">NearClick</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="dots.png" style="height:20px; width:20px;">
+                <img src="/assets/dots.png" style="height:20px; width:20px;">
               </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
@@ -130,7 +148,12 @@
 <body>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a class="navbar-brand" style="text-align:center;" href="/">NearClick</a>
+<div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
   <br>
   <% if user_signed_in? %>
   <p style="text-align:center;">Welcome <%= current_user.username %></p>
