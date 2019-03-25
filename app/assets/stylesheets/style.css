@@ -92,7 +92,7 @@ p {
   color: #fff; }
 
 .navbar-light .navbar-nav .nav-link {
-  font-size: 23px;
+  font-size: 15px;
   font-weight: 300;
   color: #fff; }
   .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
@@ -161,7 +161,7 @@ p {
   min-height: 350px; }
   @media (max-width: 992px) {
     .slider {
-      min-height: 450px; } }
+      min-height: 250px; } }
 
 .btn-outline-light {
   padding: 10px 16px; }
