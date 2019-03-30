@@ -175,22 +175,6 @@
 
 
 
-  <section class="main-block">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="styled-heading">
-                        <h3>Click to sell or exchange your products</h3>
-                        <% if current_user&.shop %>
-  <%= link_to 'Manage Shop', current_user.shop, class: "btn btn-danger" %>
-<% else %>
-                        <a href="/shops/new" class="btn btn-danger">Add Shop</a>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
   </body>
 </html>
 
