@@ -80,28 +80,18 @@ function closeNav() {
                         <nav class="navbar navbar-expand-lg navbar-light">
 
                             <span style="font-size:28px;cursor:pointer; color:#fff;" onclick="openNav()">&#9776; </span>
-                            <a href="/users/sign_in">
+                            <a href="/users/sign_in" style="padding-right:10px;">
                             <img src="/assets/user.png" style="height:40px; width:40px;">
                            </a>
-                            <a class="navbar-brand" style="font-size:20px;" href="/">NearClick</a>
-                          
-                           
-
-
-
-                           <li class="nav-item dropdown" style="padding:0px;">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img src="/assets/mi.png" style="height:40px; width:40px;">
-                   </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Ladies Stores</a>
-                                            <a class="dropdown-item" href="#">Men Stores</a>
-                                            <a class="dropdown-item" href="#">Kids Stores</a>
-                                            <a class="dropdown-item" href="#">Ladies Tailors</a>
-                                            <a class="dropdown-item" href="#">Mens Tailors</a>
-                                            <a class="dropdown-item" href="#">Curtains & Bedsheets</a>
-                                        </div>
-                                    </li>
+                            <a class="navbar-brand" style="font-size:20px; margin-right:10px;" href="/">NearClick</a>
+                            <div class="dropdown">
+                          <img src="/assets/mi.png" class="dropdown-toggle" data-toggle="dropdown" style="height:40px; width:40px;">
+                          <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">West Bengal</a>
+      <a class="dropdown-item" href="#">Maharastra</a>
+      <a class="dropdown-item" href="#">Bihar</a>
+    </div>
+  </div>
                            
 
                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
