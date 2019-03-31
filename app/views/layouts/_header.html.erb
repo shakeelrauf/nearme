@@ -79,10 +79,10 @@ function closeNav() {
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
 
-                            <span style="font-size:28px;cursor:pointer; color:#fff;" onclick="openNav()">&#9776; </span>
-                            <a href="/users/sign_in">
-                            <img src="/assets/user.png" style="height:40px; width:40px;">
-                           </a>
+                           
+                            
+                            <img src="/assets/user.png"  onclick="openNav()" style="height:40px; width:40px;">
+                           
                             <a class="navbar-brand" style="font-size:20px;" href="/">NearClick</a>
                             
                           <img src="/assets/mi.png" data-toggle="modal" data-target="#myModal" style="height:40px; width:40px;">
@@ -239,8 +239,11 @@ function closeNav() {
   <br>
   <% if user_signed_in? %>
   <p style="text-align:center;">Welcome <%= current_user.username %></p>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
   <% else %>
   <p style="text-align:center;">Welcome Guest</p>
+  <a href="/users/sign_in">Sign In</a>
+  <a href="/users/sign_up">Register</a>
   <% end %>
   <% if current_user&.shop %>
   <a href="/products/new">Add Product</a>
