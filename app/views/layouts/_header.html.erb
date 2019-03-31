@@ -84,44 +84,78 @@ function closeNav() {
                             <img src="/assets/user.png" style="height:40px; width:40px;">
                            </a>
                             <a class="navbar-brand" style="font-size:20px;" href="/">NearClick</a>
-                            <div class="dropdown">
-                          <img src="/assets/mi.png" class="dropdown-toggle" data-toggle="dropdown" style="height:40px; width:40px;">
-                          
-      <ul class="dropdown-menu">
-      Select Your Location
+                            
+                          <img src="/assets/mi.png" data-toggle="modal" data-target="#myModal" style="height:40px; width:40px;">
+
+
+
+                           <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Your Location</h4>
+        </div>
+        <div class="modal-body">
+          <style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+</style>
+
+   
+<div class="container">
+                                        
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+
       <li class="dropdown-submenu">
         <a class="test" tabindex="-1" href="#">West Bengal <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          Select Your District
-          <li><a tabindex="-1" href="#">Kolkata</a></li>
-          <li><a tabindex="-1" href="#">Mednipur</a></li>
-          
+          <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+          <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
         </ul>
       </li>
 
 
-      <li class="dropdown-submenu">
-        <a class="test" tabindex="-1" href="#">Maharastra <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-           Select Your District
-          <li><a tabindex="-1" href="#">Nagpur</a></li>
-          <li><a tabindex="-1" href="#">Pune</a></li>
-          
-        </ul>
-      </li>
-
-
-      <li class="dropdown-submenu">
+       <li class="dropdown-submenu">
         <a class="test" tabindex="-1" href="#">Bihar <span class="caret"></span></a>
         <ul class="dropdown-menu">
-           Select Your District
-          <li><a tabindex="-1" href="#">Patna</a></li>
-          <li><a tabindex="-1" href="#">Nalanda</a></li>
-          
+          <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+          <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
         </ul>
       </li>
     </ul>
-   
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
   </div>
                            
 
