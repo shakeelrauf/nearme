@@ -1,4 +1,11 @@
 <% if mobile_device == "mobile" %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 <style>
 .sidenav {
   height: 100%;
@@ -152,14 +159,20 @@ function closeNav() {
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="#">Ladies Stores</a>
-                                            <a class="dropdown-item" href="#">Men Stores</a>
-                                            <a class="dropdown-item" href="#">Kids Stores</a>
-                                            <a class="dropdown-item" href="#">Ladies Tailors</a>
-                                            <a class="dropdown-item" href="#">Mens Tailors</a>
-                                            <a class="dropdown-item" href="#">Curtains & Bedsheets</a>
+          <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Electronics
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">TV</a>
+                                            <a class="dropdown-item" href="#">ACS</a>
+                                            <a class="dropdown-item" href="#">Refrigerator</a>
+                                            <a class="dropdown-item" href="#">Computer</a>
+                                            <a class="dropdown-item" href="#">Laptop</a>
+                                            <a class="dropdown-item" href="#">Mobile</a>
                                         </div>
+                                    </li>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
