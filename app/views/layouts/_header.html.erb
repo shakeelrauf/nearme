@@ -1,5 +1,4 @@
 <% if mobile_device == "mobile" %>
-
 <style>
 .sidenav {
   height: 100%;
@@ -89,29 +88,22 @@ function closeNav() {
                            </a>
                             <a class="navbar-brand" style="font-size:20px;" href="/">NearClick</a>
                             
-                          <img src="/assets/mi.png" data-toggle="modal" data-target="#myModaloho" style="height:40px; width:40px;">
+                          <img src="/assets/mi.png" data-toggle="modal" data-target="#myModal" style="height:40px; width:40px;">
 
 
 
-
-
-                          <!-- The Modal -->
-  
-
-
-
-<div class="modal fade" id="myModaltw" role="dialog">
+                           <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Select Your Location</h4>
         </div>
         <div class="modal-body">
-          <li>Ahmed</li>
-          <li>Test</li>
+          <h1>Hello</h1>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -130,33 +122,109 @@ function closeNav() {
                                      
 
 
-                                    <li class="nav-item active">
-                                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModaltw">Open Modal</button>
-                                        <!-- Modal -->
+                                     <li class="nav-item active">
+                                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModaltw">Beauty
+                                          <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                                        </a>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/electronics">Electronics</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Fashion
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Ladies Stores</a>
+                                            <a class="dropdown-item" href="#">Men Stores</a>
+                                            <a class="dropdown-item" href="#">Kids Stores</a>
+                                            <a class="dropdown-item" href="#">Ladies Tailors</a>
+                                            <a class="dropdown-item" href="#">Mens Tailors</a>
+                                            <a class="dropdown-item" href="#">Curtains & Bedsheets</a>
+                                        </div>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/furniture">Furniture</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Electronics
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">TV</a>
+                                            <a class="dropdown-item" href="#">ACS</a>
+                                            <a class="dropdown-item" href="#">Refrigerator</a>
+                                            <a class="dropdown-item" href="#">Computer</a>
+                                            <a class="dropdown-item" href="#">Laptop</a>
+                                            <a class="dropdown-item" href="#">Mobile</a>
+                                        </div>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/kitchen">Kitchen</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Furniture & Decor
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Furnitures</a>
+                                            <a class="dropdown-item" href="#">Utensil Shops</a>
+                                            <a class="dropdown-item" href="#">Kitchen Appliances</a>
+                                            <a class="dropdown-item" href="#">Carpet</a>
+                                            <a class="dropdown-item" href="#">Wallpaper</a>
+                                        </div>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/grocery">Grocery</a>
+
+
+
+
+                                     <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Grocery
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Beverages</a>
+                                            <a class="dropdown-item" href="#">Snacks</a>
+                                            <a class="dropdown-item" href="#">Breakfast Items</a>
+                                            <a class="dropdown-item" href="#">Lunch Items</a>
+                                            <a class="dropdown-item" href="#">Dairy Items</a>
+                                            <a class="dropdown-item" href="#">Frozen Foods</a>
+                                            <a class="dropdown-item" href="#">Vegetables</a>
+                                            <a class="dropdown-item" href="#">Fruits</a>
+                                            <a class="dropdown-item" href="#">Household Needs</a>
+                                        </div>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/restraunts">Retraunts</a>
+
+
+
+                                     <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Food & Travel
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Restraunts</a>
+                                            <a class="dropdown-item" href="#">Fast Food</a>
+                                            <a class="dropdown-item" href="#">Lodges</a>
+                                            <a class="dropdown-item" href="#">Hotels</a>
+                                            <a class="dropdown-item" href="#">Travel Agents</a>
+                                        </div>
                                     </li>
 
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/welcome/events">Events</a>
+                                   
+
+                                   <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Education
+                     <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-sign-icon-button-green-approved-check-712.png" style="width:10px; height:10px;">
+                   </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="#">Coching Centers</a>
+                                            <a class="dropdown-item" href="#">Home Tutors</a>
+                                            <a class="dropdown-item" href="#">Computer Classes</a>
+                                            <a class="dropdown-item" href="#">Art Classes</a>
+                                            <a class="dropdown-item" href="#">Book Stores</a>
+                                        </div>
                                     </li>
                                     
                                    
