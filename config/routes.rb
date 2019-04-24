@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
 
 
-get '/cart', to: 'order_items#index'
+  get '/cart', to: 'order_items#index'
   resources :order_items, path: '/cart/items'
   get '/cart/checkout', to: 'orders#new', as: :checkout
   patch '/cart/checkout', to: 'orders#create'
-   get '/cart/tracking', to: 'orders#show', as: :tracking
+  get '/cart/tracking', to: 'orders#show', as: :tracking
 
 
 
@@ -34,4 +34,6 @@ get '/cart', to: 'order_items#index'
   get 'welcome/decor'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # new routes
+  post :get_cities_by_state,       action: :get_cities_by_state, controller: :products
 end

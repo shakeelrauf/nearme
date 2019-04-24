@@ -4,4 +4,6 @@ class Product < ApplicationRecord
 	mount_uploader :imagethree, ImageUploader
 	belongs_to :user
 	belongs_to :shop
+
+	
 end

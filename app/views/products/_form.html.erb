@@ -36,8 +36,8 @@
 <fieldset>
 <legend><span class="number">3</span> Details</legend>
 <%= form.text_field :price, id: :product_price, placeholder: "Price of your product/service (optional for services)" %>
-
-
+<%= form.select :state, options_for_select([["Select a state",""]] + State.all.map { |c| [c.name, c.id] },selected:  product.state ), {}, id: "state"%>
+<%= form.select :city, options_for_select([["Select a City",""]]),{}, :id => 'city' %>
 </fieldset>
 <div class="actions">
     <%= form.submit %>
@@ -175,3 +175,42 @@ font-size: 20px;
   background: #109177;
 }
 </style>
+<script type="text/javascript">
+var  selectedCity;
+<% if product.city.present? %>
+  selectedCity = <%= product.city  %>;
+<% end %>
+$(function() {
+  if ($("select#state").val() == "") {
+    $("select#city option").remove();
+    var row = "<option value=\"" + "" + "\">" + "city" + "</option>";
+    $(row).appendTo("select#city");
+   }
+   var $val = $("select#state").val();
+   if($val != ""){
+     getCitiesOfState($val)
+   }
+   
+   $("select#state").change(function() {
+    var id_value_string = $(this).val();
+    if (id_value_string == "") {
+     $("select#city option").remove();
+     var row = "<option value=\"" + "" + "\">" + "city" + "</option>";
+     $(row).appendTo("select#city");
+    } else {
+     // Send the request and update city dropdown
+      getCitiesOfState(id_value_string)
+     
+    }
+   });
+
+  });
+
+    
+    
+    
+    
+    
+    
+    
+</script>
