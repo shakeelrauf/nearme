@@ -26,16 +26,31 @@ class ShopsController < ApplicationController
   # POST /shops
   # POST /shops.json
   def create
-    @shop = current_user.build_shop(shop_params)
-    @shop.user = current_user
-
-    respond_to do |format|
-      if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
-        format.json { render :show, status: :created, location: @shop }
-      else
-        format.html { render :new }
-        format.json { render json: @shop.errors, status: :unprocessable_entity }
+    if params[:shop][:registeration_number].present?
+      code = RegisterationNumber.where(code: params[:shop][:registeration_number]).first
+      if code.present?
+        @shop = current_user.build_shop(shop_params)
+        @shop.user = current_user
+        @shop.registeration_number_id = code.id
+        respond_to do |format|
+          if @shop.save
+            format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
+            format.json { render :show, status: :created, location: @shop }
+          else
+            format.html { render :new }
+            format.json { render json: @shop.errors, status: :unprocessable_entity }
+          end
+        end
+      else    
+        respond_to do |format|
+          format.html { redirect_to new_shop_path, notice: 'Shop was successfully created.'  }
+          format.json { render json: {registeration: "Registeration Number not foud"}, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to new_shop_path, notice: 'Shop was successfully created.'   }
+        format.json { render json: {registeration: "Registeration Number not foud"}, status: :unprocessable_entity }
       end
     end
   end

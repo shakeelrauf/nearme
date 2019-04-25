@@ -1,0 +1,12 @@
+<div class="container" style="margin-top: 200px">
+	<% @numbers.each.with_index(1) do |number,i| %>
+		<a href="<%=registeration_number_orders_path(number.id)%>"><h1><%= i %>. <%= number.code %></h1></a>	
+	<% end %>
+	<%= form_with(model: RegisterationNumber.new, local: true) do |form| %>
+	 
+	  <div class="actions">
+	    <%= form.submit "Generate Code", class: "btn btn-primary", style: 'width: 500px' %>
+	  </div>
+	<% end %>
+
+</div>	

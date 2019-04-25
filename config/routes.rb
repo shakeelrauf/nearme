@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :shops
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :products
@@ -35,5 +36,8 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # new routes
+  resources :registeration_numbers do
+    resources :orders, controller: 'registeration_numbers/orders'
+  end
   post :get_cities_by_state,       action: :get_cities_by_state, controller: :products
 end

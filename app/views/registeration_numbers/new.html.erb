@@ -1,0 +1,8 @@
+
+<%= form_with(model: RegisterationNumber.new, local: true,html:  {style: 'margin-top: 200px'}) do |form| %>
+ 
+  <div class="actions">
+    <%= form.submit "Generate Code", class: "btn btn-primary", style: 'width: 500px' %>
+  </div>
+<% end %>
+
